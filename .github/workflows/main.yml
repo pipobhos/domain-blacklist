@@ -1,0 +1,22 @@
+name: Sync Fork get blacklist
+
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  wget:
+    runs-on: ubuntu-latest
+    steps:
+    - name: wget
+      uses: wei/wget@v1
+      with:
+        args: -O https://raw.githubusercontent.com/stamparm/blackbook/master/blackbook.txt
+    
+#jobs:
+#  sync:
+#      runs-on: ubuntu-latest
+
+#      steps:
+#        - uses: tgymnich/fork-sync@v1.8
+#          with:
+#            token: ${{ secrets.PERSONAL_TOKEN }}
